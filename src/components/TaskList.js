@@ -3,7 +3,8 @@ const estilos = {
   borderRadius: "1rem",
   maxHeight: "35rem",
   overflowY: "scroll",
-  fontWeig: "bold"
+  fontWeig: "bold",
+  listStyle: "none"
   },
 }
 function TaskList({children}){

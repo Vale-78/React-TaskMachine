@@ -5,7 +5,6 @@ const estilos = {
         fontSize: "xxx-large",
         background: "linear-gradient(177deg, rgb(215 148 34), blue)",
         // background: "linear-gradient(70deg, blue, pink)",
-        
         textAlign: "center",
         margin: 0,
         padding: "30px 48px",
@@ -27,7 +26,7 @@ const estilos = {
         flexDirection:"column"
     },
     p:{
-        fontSize: "large",
+        fontSize: "x-large",
         backgroundColor: "rgb(242 182 81 / 72%)",
         textAlign: "center",
         border: "solid rgb(29 85 100) 4px",
@@ -45,7 +44,12 @@ const estilos = {
         marginLeft: "10%",
         marginRight: "10%",
         padding: "12px 0",
-       
+        fontWeight: "normal",
+    },
+   span:{
+        fontWeight:"bold",
+        fontSize: "xx-large",
+        color:"rgb(29 85 100) ",
     },
     '@media (max-width: 450px)': {
         p:{
@@ -69,7 +73,7 @@ function TaskCounter({ total, completed }) {
                 <div style={estilos.countTasks}>
                     <p style={estilos.p}>Aquí podrás optimizar tu día creando, quitando o añadiendo tareas.</p>
                     <h3 style={estilos.h3}>Tu progreso💪🏽</h3>
-                    <h2 style={estilos.h2}>Has completado <span>{completed}</span> de <span>{total}</span> Tareas</h2>
+                    <h2 style={estilos.h2}>Has completado <span style={estilos.span}>{completed}</span> de <span style={estilos.span}>{total}</span> Tareas</h2>
                 </div>
             </div>
         </>

@@ -1,60 +1,23 @@
+import "./TaskItem.css";
 
-const estilos = {
-  li: {
-    display: "flex",
-    alignItems: "center",
-    fontSize: "large",
-    background: "linear-gradient(70deg, blue, pink)",
-    textAlign: "center",
-    border: "solid #f2b651 8px",
-    margin: "2% 10%",
-    borderRadius: "2rem",
-    padding: "0.5rem",
-    maxHeight: "35rem",
-    fontWeight: "bold",
-    color:"white"
-  },
-  checked:{
-    width:"20%",
-    color:"#4caf50",
-    fontSize: "xx-large",
-    fontWeight: "bold"
-  },
-  p:{
-    width:"60%",
-  },
-  closed:{
-    width:"20%",
-    color:"red",
-    fontSize: "xx-large",
-    fontWeight: "bold"
-  }
-  
-// .Icon-check {
-//   position: absolute;
-//   left: 12px;
-// }
-// .Icon-check--active {
-//   color: #4caf50;
-// }
+function TaskItem(props) {
+  return (
+    <li className="li">
+      <span
+        className={`icon icon-checked ${
+          props.completed && "icon-checked--active"
+        }`}
+        onClick={props.onComplete}
+      >
+        V
+      </span>
+      {/* operador ternariom si completed es true, entonces  checked-active (se pone en verde) */}
+      <p className={`p ${props.completed && "p--complete"} `}>{props.text}</p>
 
-// .Icon-delete {
-//   position: absolute;
-//   top: -24px;
-//   right: 0;
-// }
-// .Icon-delete:hover {
-//   color: red;
-// }
+      <span className={`icon icon-delete`} onClick={props.onDelete}>
+        X
+      </span>
+    </li>
+  );
 }
-
-function TaskItem(props){
-    return(
-      <li  style={estilos.li}>
-        <span style={estilos.checked}>V {props.completed}</span>
-        <p style={estilos.p}>{props.text}</p>
-        <span style={estilos.closed}>X</span>
-      </li>
-    )
-  }
-  export {TaskItem}
+export { TaskItem };
